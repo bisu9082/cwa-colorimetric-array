@@ -1,0 +1,742 @@
+{
+  "shap_global_importance": {
+    "Dye8_U": 0.007143891054764748,
+    "Dye21_U": 0.007091103331669047,
+    "Dye25_N": 0.005523469886684643,
+    "Dye16_U": 0.005209152912613484,
+    "Dye15_N": 0.005170844989473851,
+    "Dye6_U": 0.004920978708208629,
+    "Dye4_U": 0.004732507926621207,
+    "Dye1_U": 0.004619735468861121,
+    "Dye2_N": 0.004568120774529168,
+    "Dye5_U": 0.004292162911460173,
+    "Dye14_U": 0.004224990070036821,
+    "Dye11_U": 0.0038561764145295077,
+    "Dye22_N": 0.0036906031388599728,
+    "Dye27_U": 0.003377019599145794,
+    "Dye18_N": 0.0033691491031005508,
+    "Dye3_N": 0.003276612396607133,
+    "Dye24_N": 0.003198001661682017,
+    "Dye27_N": 0.0030250762641720933,
+    "Dye13_U": 0.0028902837757712628,
+    "Dye13_N": 0.002875674019596323,
+    "Dye16_N": 0.0027912630948664086,
+    "Dye19_N": 0.0027645168669041187,
+    "Dye12_N": 0.0027431109363740547,
+    "Dye20_N": 0.0026731206823225172,
+    "Dye15_U": 0.0025831867854888475,
+    "Dye12_U": 0.002440491185625973,
+    "Dye17_U": 0.002426552086803372,
+    "Dye2_U": 0.002378939958224945,
+    "Dye3_U": 0.002355285981107955,
+    "Dye26_U": 0.0022754317650880277,
+    "Dye23_N": 0.002242355552152984,
+    "Dye7_U": 0.0022423417597310182,
+    "Dye17_N": 0.002150604496234612,
+    "Dye19_U": 0.0021003663209340426,
+    "Dye14_N": 0.002008708734832471,
+    "Dye20_U": 0.001966549037054277,
+    "Dye9_N": 0.0019656301760626544,
+    "Dye21_N": 0.001851745882007695,
+    "Dye28_N": 0.0018492836016978562,
+    "Dye11_N": 0.001787046360251286,
+    "Dye18_U": 0.0017211541968523564,
+    "Dye23_U": 0.0016803230592099634,
+    "Dye22_U": 0.0016500142886943362,
+    "Dye28_U": 0.001626753722734675,
+    "Dye26_N": 0.001620607127494105,
+    "Dye25_U": 0.001618647955365374,
+    "Dye8_N": 0.0015607816294666691,
+    "Dye1_N": 0.0014764554159984074,
+    "Dye4_N": 0.0014741889128711118,
+    "Dye29_U": 0.0013845937894133833,
+    "Dye24_U": 0.0013843313618337005,
+    "Dye9_U": 0.0013696208624122358,
+    "Dye10_U": 0.0013072927409308204,
+    "Dye5_N": 0.0012431249170543892,
+    "Dye7_N": 0.0012014819979140482,
+    "Dye10_N": 0.0011273836367759033,
+    "Dye6_N": 0.0008988938151590471,
+    "Dye29_N": 0.0006834786033716379
+  },
+  "shap_per_class": {
+    "A-230": {
+      "Dye6_U": 0.011556873656660851,
+      "Dye4_U": 0.009115452558341253,
+      "Dye1_U": 0.008197948342134493,
+      "Dye23_U": 0.007915246981114994,
+      "Dye27_N": 0.006439373853854121
+    },
+    "A-232": {
+      "Dye2_N": 0.015878883145629075,
+      "Dye6_U": 0.013082959357667998,
+      "Dye4_U": 0.010467414419608495,
+      "Dye1_U": 0.007284570761551011,
+      "Dye8_U": 0.006341693075459724
+    },
+    "A-234": {
+      "Dye2_N": 0.010322672455735904,
+      "Dye6_U": 0.009514447721586798,
+      "Dye4_U": 0.009211315618992187,
+      "Dye22_N": 0.0074794982990089645,
+      "Dye1_U": 0.006927762939874518
+    },
+    "A-242": {
+      "Dye22_N": 0.022628554094062878,
+      "Dye2_N": 0.010512968578041636,
+      "Dye6_U": 0.006413002275087417,
+      "Dye4_U": 0.0058523310093990906,
+      "Dye1_U": 0.005351520225926856
+    },
+    "AC": {
+      "Dye21_U": 0.01877978860733373,
+      "Dye25_N": 0.007265512672756377,
+      "Dye26_N": 0.005913128649898452,
+      "Dye28_N": 0.0058150840318454845,
+      "Dye15_N": 0.005805556524294321
+    },
+    "CG": {
+      "Dye12_U": 0.009153719481597959,
+      "Dye18_N": 0.009064332409037335,
+      "Dye15_N": 0.007877624920485384,
+      "Dye21_U": 0.007597072583484608,
+      "Dye25_N": 0.0061140842899680015
+    },
+    "CK": {
+      "Dye21_U": 0.013330113933520614,
+      "Dye3_N": 0.01120188433625609,
+      "Dye16_U": 0.007134393508545298,
+      "Dye24_N": 0.005579587640992886,
+      "Dye15_N": 0.0046538109659226695
+    },
+    "DMMP": {
+      "Dye8_U": 0.011750832013771449,
+      "Dye27_U": 0.009927237021994733,
+      "Dye25_N": 0.007480143898319904,
+      "Dye21_U": 0.007380776103639271,
+      "Dye5_U": 0.007179019448159396
+    },
+    "GA": {
+      "Dye8_U": 0.013831869555121267,
+      "Dye11_U": 0.008383828717192576,
+      "Dye13_N": 0.008247151008222672,
+      "Dye5_U": 0.007482814874937264,
+      "Dye3_N": 0.0068537218033674005
+    },
+    "GB": {
+      "Dye29_U": 0.010374892892886055,
+      "Dye8_U": 0.010352724787729833,
+      "Dye5_U": 0.007382140748275444,
+      "Dye16_U": 0.0071928579983925834,
+      "Dye14_N": 0.006747386334917945
+    },
+    "GD": {
+      "Dye11_U": 0.011679133536963423,
+      "Dye5_U": 0.009473995949621714,
+      "Dye8_U": 0.007510945599914317,
+      "Dye27_N": 0.006000490851272645,
+      "Dye2_U": 0.005993343965479943
+    },
+    "GF": {
+      "Dye8_U": 0.010216961582221542,
+      "Dye11_U": 0.00862252542597692,
+      "Dye27_U": 0.006106544759321774,
+      "Dye16_U": 0.005948098224537898,
+      "Dye5_U": 0.0053763227962335776
+    },
+    "HD": {
+      "Dye21_U": 0.014188194462942786,
+      "Dye16_N": 0.01086310096254094,
+      "Dye25_N": 0.01023317598989335,
+      "Dye15_U": 0.009944956804282208,
+      "Dye18_N": 0.009066479866356215
+    },
+    "HN": {
+      "Dye15_N": 0.019292659499402214,
+      "Dye16_U": 0.012383037771333023,
+      "Dye21_U": 0.011678814321307799,
+      "Dye8_U": 0.006942629597170426,
+      "Dye25_N": 0.006224478186392349
+    },
+    "L": {
+      "Dye21_U": 0.010783322854791154,
+      "Dye9_N": 0.010160212107566829,
+      "Dye20_U": 0.008928100498723227,
+      "Dye13_U": 0.008345412917682522,
+      "Dye15_N": 0.007241835327185851
+    },
+    "PS": {
+      "Dye21_U": 0.007618522855432484,
+      "Dye24_N": 0.007524672686981785,
+      "Dye8_U": 0.006365729238230609,
+      "Dye25_N": 0.005766612776757971,
+      "Dye18_U": 0.005522812384154454
+    },
+    "VX": {
+      "Dye20_N": 0.010830446701527451,
+      "Dye13_N": 0.009552480050210584,
+      "Dye8_U": 0.007059740426741956,
+      "Dye17_N": 0.007056074933861352,
+      "Dye16_U": 0.006366792964626044
+    }
+  },
+  "hierarchical": {
+    "tier1": {
+      "accuracy": 0.9852941176470589,
+      "f1": 0.9833993586115827,
+      "classes": [
+        "d1",
+        "d2",
+        "d3"
+      ]
+    },
+    "tier2": {
+      "d1": {
+        "accuracy": 0.625,
+        "f1": 0.5873015873015873,
+        "n_classes": 6,
+        "classes": [
+          "DMMP",
+          "GA",
+          "GB",
+          "GD",
+          "GF",
+          "VX"
+        ]
+      },
+      "d2": {
+        "accuracy": 0.6785714285714286,
+        "f1": 0.6712018140589568,
+        "n_classes": 7,
+        "classes": [
+          "AC",
+          "CG",
+          "CK",
+          "HD",
+          "HN",
+          "L",
+          "PS"
+        ]
+      },
+      "d3": {
+        "accuracy": 0.5,
+        "f1": 0.49206349206349204,
+        "n_classes": 4,
+        "classes": [
+          "A-230",
+          "A-232",
+          "A-234",
+          "A-242"
+        ]
+      }
+    },
+    "hierarchical_accuracy": 0.6176470588235294
+  },
+  "concentration": {
+    "per_concentration": {
+      "10": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "n_samples": 17,
+        "n_classes": 17
+      },
+      "50": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "n_samples": 17,
+        "n_classes": 17
+      },
+      "100": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "n_samples": 17,
+        "n_classes": 17
+      },
+      "500": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "n_samples": 17,
+        "n_classes": 17
+      }
+    },
+    "lod_estimates": {
+      "A-230": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.6885164966551727,
+          "50": 1.9026228493448276,
+          "100": 1.7277101998275861,
+          "500": 3.60222270262069
+        }
+      },
+      "A-232": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.7095367570344824,
+          "50": 2.0490293170344827,
+          "100": 2.1008988026551725,
+          "500": 5.333896814206895
+        }
+      },
+      "A-234": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 2.128810265827586,
+          "50": 4.360441366241378,
+          "100": 5.469150927655174,
+          "500": 10.449089440275863
+        }
+      },
+      "A-242": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 2.2908064433793105,
+          "50": 4.80291210962069,
+          "100": 7.213294353206896,
+          "500": 14.410206900586207
+        }
+      },
+      "AC": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.5786988878275858,
+          "50": 1.6337908314827583,
+          "100": 1.909729393724138,
+          "500": 2.105536684758621
+        }
+      },
+      "CG": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.6606070122413796,
+          "50": 1.5742723224137933,
+          "100": 1.7114416651034483,
+          "500": 5.365352437517241
+        }
+      },
+      "CK": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.6113607440000002,
+          "50": 1.6197027894827585,
+          "100": 1.6011651951034482,
+          "500": 1.9757958507931035
+        }
+      },
+      "DMMP": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 0.9798304032413792,
+          "50": 1.0071903106206899,
+          "100": 1.129559969551724,
+          "500": 1.1120284557931035
+        }
+      },
+      "GA": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.0982516822413793,
+          "50": 1.2872250380689656,
+          "100": 1.5552118351379307,
+          "500": 2.1883785760689656
+        }
+      },
+      "GB": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.069549619862069,
+          "50": 1.3296975500000001,
+          "100": 1.4655398947241378,
+          "500": 1.9821157104827587
+        }
+      },
+      "GD": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.1625611295517242,
+          "50": 1.947091830862069,
+          "100": 2.334900123827586,
+          "500": 3.887510531965517
+        }
+      },
+      "GF": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.295846325034483,
+          "50": 2.0540714269310345,
+          "100": 2.2673826988965518,
+          "500": 3.8319939134137933
+        }
+      },
+      "HD": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.2811700138275859,
+          "50": 1.290357643137931,
+          "100": 1.427495094551724,
+          "500": 1.6831377248965518
+        }
+      },
+      "HN": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.6299806140689652,
+          "50": 1.8765443468620688,
+          "100": 2.1322366293793102,
+          "500": 2.4246817298620686
+        }
+      },
+      "L": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 2.9221168597586207,
+          "50": 4.567468591413793,
+          "100": 5.520534360689654,
+          "500": 6.129115144862068
+        }
+      },
+      "PS": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 1.8428960786206896,
+          "50": 1.5644180115862072,
+          "100": 2.2940504385517246,
+          "500": 3.060135605482759
+        }
+      },
+      "VX": {
+        "baseline_sigma": 0.0,
+        "threshold_3sigma": 0.0,
+        "lod_uM": 10.0,
+        "conc_responses": {
+          "10": 2.4443943229310348,
+          "50": 4.933235794655173,
+          "100": 7.046146704206897,
+          "500": 8.694875692068965
+        }
+      }
+    }
+  },
+  "selectivity_top_pairs": {
+    "A-242_x_Dye11": 29.98649018481631,
+    "A-242_x_Dye24": 11.614838060114096,
+    "A-242_x_Dye12": 10.496181261392081,
+    "L_x_Dye8": 9.085802909968494,
+    "L_x_Dye9": 7.361194359136355,
+    "A-242_x_Dye5": 6.5960629395623025,
+    "A-242_x_Dye2": 5.941285366239315,
+    "A-234_x_Dye5": 5.782975295688779,
+    "A-242_x_Dye7": 5.516980719976097,
+    "VX_x_Dye5": 5.350239735649574,
+    "A-242_x_Dye14": 5.344394654372679,
+    "HN_x_Dye15": 5.203258468385923,
+    "VX_x_Dye16": 5.150147733594931,
+    "A-234_x_Dye16": 5.024292546215138,
+    "A-234_x_Dye2": 4.936797047401619,
+    "A-232_x_Dye2": 4.800987809649244,
+    "L_x_Dye19": 4.501676167842294,
+    "CG_x_Dye8": 4.42879141708368,
+    "A-234_x_Dye1": 4.388194246038794,
+    "L_x_Dye15": 4.168990402526835,
+    "A-242_x_Dye16": 4.0015532011111405,
+    "CG_x_Dye15": 3.998018871171502,
+    "A-234_x_Dye20": 3.866885803791558,
+    "CG_x_Dye21": 3.8585723775206944,
+    "A-242_x_Dye20": 3.6785685073080927,
+    "GD_x_Dye7": 3.5744508926128344,
+    "A-234_x_Dye14": 3.5651053429855417,
+    "CG_x_Dye7": 3.54998580279328,
+    "GD_x_Dye18": 3.5092321911441564,
+    "A-242_x_Dye22": 3.4946888927053967
+  },
+  "mechanisms": {
+    "A-230": {
+      "top_dye": "Methyl Blue",
+      "dye_class": "Triarylmethane",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "P=O",
+        "P-F",
+        "N=C",
+        "P-N"
+      ],
+      "dye_reactive_groups": [
+        "cationic center",
+        "electrophilic C+"
+      ],
+      "proposed_mechanism": "Lewis acid-base (P=O ↔ Triarylmethane)"
+    },
+    "A-232": {
+      "top_dye": "Pyrene",
+      "dye_class": "PAH",
+      "illumination": "Normal",
+      "agent_functional_groups": [
+        "P=O",
+        "P-F",
+        "N=C",
+        "P-N",
+        "P-O"
+      ],
+      "dye_reactive_groups": [
+        "π-electron donor",
+        "fluorescence quenching"
+      ],
+      "proposed_mechanism": "Electron transfer quenching by amidine"
+    },
+    "A-234": {
+      "top_dye": "Pyrene",
+      "dye_class": "PAH",
+      "illumination": "Normal",
+      "agent_functional_groups": [
+        "P=O",
+        "P-F",
+        "N=C",
+        "P-N",
+        "P-O"
+      ],
+      "dye_reactive_groups": [
+        "π-electron donor",
+        "fluorescence quenching"
+      ],
+      "proposed_mechanism": "Electron transfer quenching by amidine"
+    },
+    "A-242": {
+      "top_dye": "L-Glutathione",
+      "dye_class": "Thiol",
+      "illumination": "Normal",
+      "agent_functional_groups": [
+        "P=O",
+        "P-F",
+        "N=C",
+        "P-N",
+        "P-O"
+      ],
+      "dye_reactive_groups": [
+        "SH nucleophile",
+        "redox active"
+      ],
+      "proposed_mechanism": "Nucleophilic substitution at P-F by thiol"
+    },
+    "AC": {
+      "top_dye": "Crystal Violet",
+      "dye_class": "Triarylmethane",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "C≡N",
+        "H-donor"
+      ],
+      "dye_reactive_groups": [
+        "cationic center",
+        "electrophilic C+"
+      ],
+      "proposed_mechanism": "CN⁻ coordination to cationic dye"
+    },
+    "CG": {
+      "top_dye": "Nile Blue A",
+      "dye_class": "Oxazine",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "C=O",
+        "C-Cl"
+      ],
+      "dye_reactive_groups": [
+        "O-heterocycle",
+        "solvatochromic"
+      ],
+      "proposed_mechanism": "General interaction"
+    },
+    "CK": {
+      "top_dye": "Crystal Violet",
+      "dye_class": "Triarylmethane",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "C≡N",
+        "C-Cl"
+      ],
+      "dye_reactive_groups": [
+        "cationic center",
+        "electrophilic C+"
+      ],
+      "proposed_mechanism": "Anion exchange / halide displacement"
+    },
+    "DMMP": {
+      "top_dye": "Methyl Orange",
+      "dye_class": "Azo",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "P=O",
+        "P-O-C"
+      ],
+      "dye_reactive_groups": [
+        "N=N chromophore",
+        "Lewis base N"
+      ],
+      "proposed_mechanism": "Lewis acid-base (P=O ↔ Azo)"
+    },
+    "GA": {
+      "top_dye": "Methyl Orange",
+      "dye_class": "Azo",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "P=O",
+        "P-CN",
+        "P-N"
+      ],
+      "dye_reactive_groups": [
+        "N=N chromophore",
+        "Lewis base N"
+      ],
+      "proposed_mechanism": "Lewis acid-base (P=O ↔ Azo)"
+    },
+    "GB": {
+      "top_dye": "Rhodamine 6G",
+      "dye_class": "Xanthene",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "P=O",
+        "P-F",
+        "P-C"
+      ],
+      "dye_reactive_groups": [
+        "π-conjugation",
+        "nucleophilic O",
+        "fluorescence"
+      ],
+      "proposed_mechanism": "Fluorescence modulation (Xanthene under UV)"
+    },
+    "GD": {
+      "top_dye": "Toluidine Blue O",
+      "dye_class": "Thiazine",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "P=O",
+        "P-F",
+        "P-C"
+      ],
+      "dye_reactive_groups": [
+        "S-heterocycle",
+        "cationic N+"
+      ],
+      "proposed_mechanism": "Lewis acid-base (P=O ↔ Thiazine)"
+    },
+    "GF": {
+      "top_dye": "Methyl Orange",
+      "dye_class": "Azo",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "P=O",
+        "P-F",
+        "P-C"
+      ],
+      "dye_reactive_groups": [
+        "N=N chromophore",
+        "Lewis base N"
+      ],
+      "proposed_mechanism": "Lewis acid-base (P=O ↔ Azo)"
+    },
+    "HD": {
+      "top_dye": "Crystal Violet",
+      "dye_class": "Triarylmethane",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "S-alkyl",
+        "C-Cl"
+      ],
+      "dye_reactive_groups": [
+        "cationic center",
+        "electrophilic C+"
+      ],
+      "proposed_mechanism": "Anion exchange / halide displacement"
+    },
+    "HN": {
+      "top_dye": "Quinoline Yellow",
+      "dye_class": "Quinoline",
+      "illumination": "Normal",
+      "agent_functional_groups": [
+        "N-alkyl",
+        "C-Cl"
+      ],
+      "dye_reactive_groups": [
+        "N-heterocycle",
+        "carboxylate"
+      ],
+      "proposed_mechanism": "General interaction"
+    },
+    "L": {
+      "top_dye": "Crystal Violet",
+      "dye_class": "Triarylmethane",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "As-Cl",
+        "C=C"
+      ],
+      "dye_reactive_groups": [
+        "cationic center",
+        "electrophilic C+"
+      ],
+      "proposed_mechanism": "As(III) coordination to Lewis base"
+    },
+    "PS": {
+      "top_dye": "Crystal Violet",
+      "dye_class": "Triarylmethane",
+      "illumination": "UV",
+      "agent_functional_groups": [
+        "N-O",
+        "C-Cl"
+      ],
+      "dye_reactive_groups": [
+        "cationic center",
+        "electrophilic C+"
+      ],
+      "proposed_mechanism": "Anion exchange / halide displacement"
+    },
+    "VX": {
+      "top_dye": "Phenol Red",
+      "dye_class": "Sulfonephthalein",
+      "illumination": "Normal",
+      "agent_functional_groups": [
+        "P=O",
+        "P-S",
+        "P-O",
+        "N-alkyl"
+      ],
+      "dye_reactive_groups": [
+        "pH-sensitive OH",
+        "SO₃⁻ anion"
+      ],
+      "proposed_mechanism": "Lewis acid-base interaction with P=O"
+    }
+  }
+}

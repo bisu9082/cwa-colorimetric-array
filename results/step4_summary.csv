@@ -1,0 +1,11 @@
+Model,LOO_Accuracy,CV3_Accuracy,Std,F1,Features,Type
+Ablation: no_feature_selection,0.6323529411764706,0.619235836627141,0.0,,,ablation
+Proposed (OvR SVM + FS),0.6323529411764706,0.5820816864295125,0.03028182794949487,0.5427450980392157,58,proposed
+Baseline: standard_svm,,0.5289855072463768,0.0,,58,baseline
+Ablation: no_ovr,0.5588235294117647,0.5289855072463768,0.0,,,ablation
+Ablation: fixed_k10,0.4117647058823529,0.4716732542819499,0.0,,,ablation
+Baseline: random_selection,,0.4212121212121212,0.07874953350158165,,varies,baseline
+Ablation: normal_only,0.45588235294117646,0.4123847167325428,0.0,,,ablation
+Baseline: fixed_29dye,,0.40632411067193674,0.030495465058903683,,29,baseline
+Baseline: single_best_dye,,0.3490118577075098,0.030778759871166864,,15,baseline
+Ablation: ensemble_instead,,0.3048748353096179,0.01088372934285289,,,ablation
