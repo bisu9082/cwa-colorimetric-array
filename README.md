@@ -26,6 +26,7 @@ fitted inside each cross-validation fold on the training subset only.
 | Minimal dye subset reproducing the family result | 4 dyes (Anthracene, Pyrene, Methyl Orange, Bromophenol Blue) |
 | Tier-1 permutation null, **compound-block** | 74.1 ± 6.0% (observed 98.5%, p = 0.003) |
 | Tier-1 permutation null, sample-level (anti-conservative) | 34.2 ± 7.2% |
+| Leave-one-**compound**-out permutation null | 29.9 ± 10.7% (observed 92.6%, p = 0.002, z = 5.9) |
 
 > **Correction notice.** An earlier version of this repository and of the manuscript reported
 > a flat 17-class accuracy of **63.2% (43/68)**. That value came from standardizing the full
@@ -35,6 +36,13 @@ fitted inside each cross-validation fold on the training subset only.
 > Do not use any 63.2% figure from earlier snapshots.
 
 ---
+
+## Colour-difference metric
+
+ΔE is **CIEDE2000** throughout, each sample referenced to its own matched 0 µM control.
+See `data/raw/NOTE_deltaE_metric.md` — two deposited RGB files carried a CIE76 column and
+were regenerated on 2026-08-24. No reported result changed; the analysis pipeline reads the
+pivot tables, which were already CIEDE2000.
 
 ## Layout
 
