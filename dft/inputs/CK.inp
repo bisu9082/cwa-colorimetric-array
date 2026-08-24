@@ -1,0 +1,17 @@
+# CK | Cyanogen chloride | d2
+# Source: PubChem 10447
+# Formula: CClN  MW: 61.47  Atoms: 3
+
+! B3LYP D3BJ def2-TZVP Opt Freq NPA
+
+%pal
+  nprocs 8
+end
+
+%maxcore 2000
+
+* xyz 0 1
+  Cl       1.473008      0.138500      0.000000
+  C       -0.189314     -0.445723      0.000000
+  N       -1.283694     -0.830344      0.000000
+*

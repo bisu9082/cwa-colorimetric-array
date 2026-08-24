@@ -1,202 +1,162 @@
-# Colorimetric Sensor Array for CWA Detection and Classification
+# Colorimetric CWA array — data, code and computational record
 
-**A 29-dye dual-illumination colorimetric sensor array with hierarchical machine learning for simultaneous detection and discrimination of 17 chemical warfare agents (CWAs), including four Novichok A-series compounds.**
+Supporting data for:
 
-> Ku Kang, Jin Yoo, Jeongyun Kim, Myeongsik Shin, Soohwan Kim, Min-Kun Kim, Doo-Hee Lee  
-
-
----
-
-## Overview
-
-This repository provides all data, analysis scripts, and manuscript source files for the study:
-
-- **Array**: 29 fluorescent/chromogenic dyes imaged under Normal (white LED) and UV (365 nm) illumination → **58-channel ΔE\*ab fingerprint** per sample
-- **Analytes**: 17 CWAs across 3 structural series
-  - d1: OP nerve agents (DMMP, GA, GB, GD, GF, VX)
-  - d2: Blood/blister/choking agents (AC, CG, CK, HD, HN, L, PS)
-  - d3: Novichok A-series (A-230, A-232, A-234, A-242)
-- **ML pipeline**: One-vs-Rest SVM (RBF, C=10) + Leave-One-Out CV (n=68)
-  - Flat 17-class accuracy: **63.2%** (F1 = 0.615)
-  - Hierarchical Tier 1 (series): **98.5%** LOO accuracy
-- **Interpretability**: SHAP TreeExplainer, RDKit molecular descriptors, functional-group mechanism proposals
+> **A 29-Dye Colorimetric Array for Chemical-Family Triage of Chemical Warfare Agents:
+> LC–HRMS Evidence Against a Covalent Chemodosimeter Mechanism**
+> J. Kim, J. Yoo, M. Shin, S. Kim, K. Kang, M.-K. Kim, D.-H. Lee
+> Submitted to *Journal of Hazardous Materials*.
 
 ---
 
-## Repository Structure
+## Headline results
 
-```
-cwa-colorimetric-array/
-├── data/
-│   ├── raw/                        # Per-series raw ΔE pivot tables
-│   │   ├── d1.normal_deltaE_pivot.csv
-│   │   ├── d1.uv_deltaE_pivot.csv
-│   │   ├── d1.rgb_deltaE_data.csv
-│   │   ├── d2.normal_deltaE_pivot.csv
-│   │   ├── d2.uv_deltaE_pivot.csv
-│   │   ├── d2.rgb_deltaE_data.csv
-│   │   ├── d3.normal_deltaE_pivot.csv
-│   │   ├── d3.uv_deltaE_pivot.csv
-│   │   └── d3.rgb_deltaE_data.csv
-│   └── processed/
-│       └── integrated_17compounds.csv  # Combined 68-sample dataset (all series)
-│
-├── results/                        # Pre-computed analysis outputs
-│   ├── step4_summary.csv           # Per-agent classification summary
-│   ├── step4_full_results.json     # Full ML result dict (accuracy, F1, confusion)
-│   ├── step4_advanced_results.json # Hierarchical + ablation results
-│   ├── step4_cheminformatics.json  # RDKit descriptor + SHAP correlation results
-│   ├── selectivity_matrix.csv      # Selectivity Index (SI) matrix (17 agents × 29 dyes)
-│   ├── agent_descriptors.csv       # RDKit descriptors for 17 CWAs
-│   ├── dye_descriptors.csv         # RDKit descriptors for 29 dyes
-│   └── descriptor_dye_correlation.csv  # Agent–dye descriptor correlation table
-│
+All values below are the **leak-free** figures reported in the manuscript. Standardization is
+fitted inside each cross-validation fold on the training subset only.
 
-│
-├── scripts/
-│   ├── step4_figures.py            # [MAIN] Figure generation (Figs 1–8)
-│   ├── step4_ml_analysis.py        # Core ML pipeline (OvR SVM, LOO-CV, baselines)
-│   ├── step4_advanced_analysis.py  # Hierarchical 2-tier + ablation + SHAP
-│   ├── step4_rdkit_analysis.py     # RDKit cheminformatics + descriptor correlation
-│   └── gen_SI_confusion.py         # SI confusion matrix figure (FigS1)
-│
-
-├── .gitignore
-└── README.md
-```
-
----
-
-## Quick Start
-
-### Requirements
-
-```bash
-pip install numpy pandas scikit-learn matplotlib seaborn shap rdkit-pypi
-```
-
-### Run ML pipeline (core classifier)
-
-```bash
-cd scripts/
-python step4_ml_analysis.py
-# → reads: ../data/processed/integrated_17compounds.csv
-# → outputs: ../results/step4_full_results.json, step4_summary.csv
-```
-
-```
-
-### Run hierarchical classification + SHAP + ablation
-
-```bash
-python step4_advanced_analysis.py
-# → outputs: ../results/step4_advanced_results.json
-```
-
-### Run RDKit cheminformatics analysis
-
-```bash
-python step4_rdkit_analysis.py
-# → outputs: ../results/step4_cheminformatics.json, agent_descriptors.csv,
-#            dye_descriptors.csv, descriptor_dye_correlation.csv, selectivity_matrix.csv
-```
-
-### Regenerate SI confusion matrix (FigS1)
-
-```bash
-python gen_SI_confusion.py
-# → outputs: ../figures/confusion_matrix_17agents.png + .pdf
-```
-
----
-
-## Key Results
-
-| Metric | Value |
+| Quantity | Value |
 |---|---|
-| Analyte panel | 17 CWAs (d1: 6, d2: 7, d3: 4) |
-| Total samples | 68 (4 concentrations × 17 agents) |
-| Feature dimensions | 58 (29 dyes × Normal + UV) |
-| Flat LOO-CV accuracy | **63.2%** (43/68), F1 = 0.615 |
-| Hierarchical Tier 1 (series) | **98.5%** (67/68) |
-| Hierarchical Tier 2 d1 | 62.5% |
-| Hierarchical Tier 2 d2 | 67.9% |
-| Hierarchical Tier 2 d3 | 50.0% |
-| Bootstrap 95% CI | [0.559, 0.608] |
-| ANOVA (9 model variants) | F = 45.30, p < 10⁻¹⁸ |
-| Random baseline | 5.9% (1/17) |
-| Highest SI pair | Dye11–A-242, SI = 29.99 |
-| Most specific dye | L-Glutathione (A-242, SHAP = 0.0226) |
+| Chemical-family assignment, leave-one-**sample**-out | **98.5%** (67/68), 95% cluster-bootstrap 95.6–100% |
+| Chemical-family assignment, leave-one-**compound**-out | **92.6%** (63/68), 95% cluster-bootstrap 83.8–100% |
+| — compounds correct at all four concentrations | 14/17 (82.4%), exact 95% 56.6–96.2% |
+| — compounds that fail | A-242 (2/4), VX (2/4), Lewisite (3/4) |
+| Majority-family baseline | 41.2% |
+| Compound-level (flat 17-class) LOO | **61.8%** (42/68), κ = 0.594, macro-F1 = 0.596 |
+| Hierarchical, both tiers correct | 57.4% (39/68) |
+| Minimal dye subset reproducing the family result | 4 dyes (Anthracene, Pyrene, Methyl Orange, Bromophenol Blue) |
+| Tier-1 permutation null, **compound-block** | 74.1 ± 6.0% (observed 98.5%, p = 0.003) |
+| Tier-1 permutation null, sample-level (anti-conservative) | 34.2 ± 7.2% |
+
+> **Correction notice.** An earlier version of this repository and of the manuscript reported
+> a flat 17-class accuracy of **63.2% (43/68)**. That value came from standardizing the full
+> feature matrix once *before* cross-validation, which leaks held-out information. The
+> leak-free value is **61.8% (42/68)** and every derived quantity — confusion matrix,
+> per-compound metrics, ablations, hierarchical totals, dye-subset results — was recomputed.
+> Do not use any 63.2% figure from earlier snapshots.
 
 ---
 
-## Data Description
+## Layout
 
-### `data/processed/integrated_17compounds.csv`
-
-The primary analysis dataset. Columns:
-
-| Column | Description |
-|---|---|
-| `agent` | CWA identifier (e.g., GA, GB, A-242) |
-| `series` | Series label (d1 / d2 / d3) |
-| `concentration` | Concentration in μM (10, 50, 100, 500) |
-| `Dye01_N` … `Dye29_N` | ΔE\*ab under Normal illumination (29 channels) |
-| `Dye01_U` … `Dye29_U` | ΔE\*ab under UV illumination (29 channels) |
-
-### `results/selectivity_matrix.csv`
-
-Selectivity Index matrix (SI_ij = ΔE_ij / mean_k≠i(ΔE_kj)) at 500 μM, Normal illumination. SI > 5 indicates high specificity; SI < 3 may be susceptible to environmental matrix interference.
-
----
-
-## Dye Array Composition
-
-29 dyes spanning 12 chemical classes:
-
-| Class | Dyes |
-|---|---|
-| PAH | Anthracene, Pyrene |
-| Xanthene | Fluorescein, Rhodamine B, Rhodamine 6G, Eosin Y |
-| Azo | Methyl Orange, Congo Red |
-| Triarylmethane | Methyl Blue, Crystal Violet, Cresol Red |
-| Thiazine | Toluidine Blue O |
-| Oxazine | Nile Blue A |
-| Phenazine | Safranin O |
-| Sulfonephthalein | Phenol Red, Bromophenol Blue |
-| Quinoline | Quinoline Yellow |
-| Thiol/Amine nucleophiles | L-Glutathione, Cysteine, 2,5-Diaminobenzenedithiol, 3,4-Diaminobenzamide |
-| Biphenol | 4,4′-Dihydroxybiphenyl, Biphenyl-4,4′-diol |
-| Others | Acridine Orange, Eriochrome Black T, Nile Red, Quinine |
-
----
-
-## Citation
-
-If you use this code or data, please cite:
-
-```bibtex
-@article{Kang2026cwa,
-  author  = {Kang, Ku and Yoo, Jin and Kim, Jeongyun and Shin, Myeongsik
-             and Kim, Soohwan and Kim, Min-Kun and Lee, Doo-Hee},
-  title   = {Machine learning-guided colorimetric sensor array for simultaneous
-             detection and discrimination of 17 chemical warfare agents
-             including Novichok A-series},
-  journal = {Journal of Hazardous Materials},
-  year    = {2026},
-  note    = {under review}
-}
+```
+data/
+  raw/                9 ΔE and RGB tables (d1/d2/d3 × normal/UV/rgb)
+  processed/          integrated_17compounds.csv — 85 rows × 58 ΔE channels
+results/
+  classification/     authoritative outputs backing every number in the paper
+  legacy/             superseded step4_* outputs — see warning below
+dft/
+  inputs/             17 ORCA input files
+  outputs/            17 ORCA output files (converged, zero imaginary modes)
+  coordinates/        17 optimised geometries (.xyz) + _summary.json
+  dft_converged.json  descriptors parsed from the FINAL wavefunctions
+structures/
+  agents_structures.csv   SMILES, InChI, InChIKey, formula, exact mass for all 17 targets
+  chem_corrected.json     RDKit descriptors + Tanimoto on the corrected structures
+code/
+  analysis/           re-runs every reported statistic
+  figures/            regenerates Figures 1, 2, 5, 6, 7, 8
+hrms/                 see hrms/README.md — files to be added
 ```
 
+### ⚠ `results/legacy/` contains superseded values
+
+`step4_*.json` and `step4_summary.csv` are the original analysis outputs, and
+`results/legacy/NOTICE_SUPERSEDED.md` repeats this warning in place. They are retained for provenance and are **not** the values in
+the paper. Two known defects:
+
+1. **`step4_full_results.json`** carries the pre-correction 63.2% accuracy (global scaling).
+2. **`step4_cheminformatics.json`** used incorrect A-series SMILES — an O-*tert*-butyl amidine
+   for A-242 (MW 252.27), which contains no guanidine, and O-ethyl / O-isopropyl homologues
+   for A-232 / A-234. The correct structures are in `structures/agents_structures.csv` and the
+   recomputed descriptors in `structures/chem_corrected.json`. Three descriptor–response
+   correlations derived from the wrong structures were withdrawn in the manuscript.
+
+The dye registry inside `step4_cheminformatics.json['dye_info']` **is** correct and is the
+authoritative source for the 29 dye identities in Table S1.
+
 ---
 
-## License
+## Reproducing the numbers
 
-This repository is released for academic use. For commercial applications or redistribution, contact the corresponding authors.
+```bash
+pip install numpy pandas scikit-learn scipy rdkit
+
+python code/analysis/full.py     # accuracy, error structure, hierarchy, LOCO, per-concentration
+python code/analysis/subs.py     # nested dye subsets, per-compound OvR AUC
+python code/analysis/chem.py     # RDKit descriptors + Tanimoto, corrected structures
+python code/analysis/perm3.py 300 t1    # compound-block permutation, Tier-1
+python code/analysis/samp.py            # sample-level permutation, 17-class
+```
+
+Figure scripts write PNGs and print their own layout-alignment checks:
+
+| script | figure |
+|---|---|
+| `fig1.py` | Fig 1 — array fingerprints |
+| `fig2.py` | Fig 2 — chemical-family assignment |
+| `hrmsfig.py` | Fig 5 — LC–HRMS; panel (d) is a descriptor record, converged values only |
+| `fig6.py` | Fig 6 — compound-level performance |
+| `fig7panel.py` | Fig 7 — measured readout + workflow |
+| `fig7.py` | Fig 8 — robustness checks |
 
 ---
 
-## Contact
+## Computational details
 
-**Doo-Hee Lee** (PI) — Korea University  
-**Ku Kang** — [bisu9082@gmail.com](mailto:bisu9082@gmail.com)
+B3LYP-D3BJ/def2-TZVP, ORCA 6.1.1, RIJCOSX with def2/J, DEFGRID2, gas phase, no implicit
+solvation. 474–640 contracted basis functions. All 17 structures converged with **zero
+imaginary frequencies**; energies and mode counts are in `dft/coordinates/_summary.json`.
+
+Descriptors in `dft/dft_converged.json` are parsed from the **final converged** wavefunction.
+An earlier parser read the first population block written during the optimisation, i.e. the
+input geometry, and gave Mayer P–F bond orders of 1.019–1.101 instead of 1.043–1.086. Those
+values are superseded.
+
+Natural population analysis was requested in the input files but the NBO executable was
+unavailable at runtime, so no NPA/NBO data exist. Mulliken and Löwdin charges are in the
+outputs; both are strongly basis-set dependent at def2-TZVP and nearly invert each other.
+
+**The Mayer P–F bond order does not discriminate.** Converged G-agent values (GD 1.051,
+GB 1.054, GF 1.055) fall inside the A-series range (1.043–1.086). Of five descriptors
+obtainable from the same wavefunctions, only one ranks with hydrolysate abundance:
+
+| descriptor | Spearman ρ vs hydrolysate abundance (n = 4) |
+|---|---|
+| Mayer P–F | −1.00 |
+| ω (Koopmans) | −0.80 |
+| Mayer P–N | **+0.40** |
+| q(P) Mulliken | 0.00 |
+| q(P) Löwdin | **+0.40** |
+
+The DFT section is a supporting record. No conclusion in the manuscript depends on a DFT
+correlation.
+
+---
+
+## Structures — read before use
+
+The A-series structural assignments are **literature hypotheses**, not experimentally
+confirmed assignments in the open literature. They follow Mirzayanov and the subsequent
+review literature and are consistent with the LC–HRMS exact-mass arithmetic reported in the
+paper, but all d3 conclusions are conditional on them. The certificate of analysis for the
+A-242 material records a nominal mass near 252 Da whereas the guanidine structure has a
+monoisotopic mass of 251.156; this discrepancy is unresolved and is stated as a limitation.
+
+This repository contains structures, optical response data and computed descriptors only. It
+contains no synthesis route, purification condition, scale-up procedure, dispersal information
+or handling instruction.
+
+---
+
+## Scope of the data
+
+Measurements were made in the dye solvents of Table S1 at 10–500 µM with no control of pH,
+ionic strength, temperature or matrix. That range is three to six orders of magnitude above
+environmental occurrence. These are not environmental measurements and should not be used as
+such.
+
+## Licence and citation
+
+Please cite the manuscript above. Raw instrument files (LC–HRMS `.raw` / mzML) are not in this
+repository owing to size; see `hrms/README.md`.

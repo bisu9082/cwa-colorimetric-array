@@ -1,0 +1,18 @@
+# CG | Phosgene | d2
+# Source: PubChem 6371
+# Formula: CCl2O  MW: 98.92  Atoms: 4
+
+! B3LYP D3BJ def2-TZVP Opt Freq NPA
+
+%pal
+  nprocs 8
+end
+
+%maxcore 2000
+
+* xyz 0 1
+  Cl       1.479755     -0.720923     -0.009831
+  C       -0.009147      0.184592      0.123704
+  O       -0.069185      1.396213      0.305429
+  Cl      -1.401423     -0.859882     -0.035228
+*

@@ -1,0 +1,87 @@
+{
+ "A-230": {
+  "n_atoms": 28,
+  "E_hartree": "-902.332205919036",
+  "imaginary_modes": 0
+ },
+ "A-232": {
+  "n_atoms": 29,
+  "E_hartree": "-977.573490733617",
+  "imaginary_modes": 0
+ },
+ "A-234": {
+  "n_atoms": 32,
+  "E_hartree": "-1016.877815502810",
+  "imaginary_modes": 0
+ },
+ "A-242": {
+  "n_atoms": 39,
+  "E_hartree": "-1075.590908603220",
+  "imaginary_modes": 0
+ },
+ "AC": {
+  "n_atoms": 3,
+  "E_hartree": "-93.414061821638",
+  "imaginary_modes": 0
+ },
+ "BZ": {
+  "n_atoms": 51,
+  "E_hartree": "-1133.659551674436",
+  "imaginary_modes": 0
+ },
+ "CG": {
+  "n_atoms": 4,
+  "E_hartree": "-1033.654066634139",
+  "imaginary_modes": 0
+ },
+ "CK": {
+  "n_atoms": 3,
+  "E_hartree": "-552.970974293331",
+  "imaginary_modes": 0
+ },
+ "DMMP": {
+  "n_atoms": 16,
+  "E_hartree": "-686.808849596014",
+  "imaginary_modes": 0
+ },
+ "GA": {
+  "n_atoms": 21,
+  "E_hartree": "-798.445988543130",
+  "imaginary_modes": 0
+ },
+ "GB": {
+  "n_atoms": 18,
+  "E_hartree": "-750.175080111106",
+  "imaginary_modes": 0
+ },
+ "GD": {
+  "n_atoms": 27,
+  "E_hartree": "-868.088441051370",
+  "imaginary_modes": 0
+ },
+ "GF": {
+  "n_atoms": 25,
+  "E_hartree": "-866.886010315944",
+  "imaginary_modes": 0
+ },
+ "HN": {
+  "n_atoms": 22,
+  "E_hartree": "-1671.042988508719",
+  "imaginary_modes": 0
+ },
+ "L": {
+  "n_atoms": 8,
+  "E_hartree": "-3693.725912704838",
+  "imaginary_modes": 0
+ },
+ "PS": {
+  "n_atoms": 7,
+  "E_hartree": "-1623.666376897984",
+  "imaginary_modes": 0
+ },
+ "VX": {
+  "n_atoms": 42,
+  "E_hartree": "-1379.505010308281",
+  "imaginary_modes": 0
+ }
+}

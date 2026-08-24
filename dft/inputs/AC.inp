@@ -1,0 +1,17 @@
+# AC | Hydrogen cyanide | d2
+# Source: PubChem 768
+# Formula: CHN  MW: 27.03  Atoms: 3
+
+! B3LYP D3BJ def2-TZVP Opt Freq NPA
+
+%pal
+  nprocs 8
+end
+
+%maxcore 2000
+
+* xyz 0 1
+  C       -0.031664     -0.000397      0.000000
+  N        1.128245      0.014127      0.000000
+  H       -1.096581     -0.013731      0.000000
+*
